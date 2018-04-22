@@ -44,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="1364" y="106.59670164917542"/>
         </scene>
-        <!--View Controller-->
+        <!--Emojii Definition View Controller-->
         <scene sceneID="Zzc-c6-7Ys">
             <objects>
-                <viewController id="0wa-v2-uVK" sceneMemberID="viewController">
+                <viewController id="0wa-v2-uVK" customClass="EmojiiDefinitionViewController" customModule="Emojii_Dictionary" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tyn-Gr-fyR">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
