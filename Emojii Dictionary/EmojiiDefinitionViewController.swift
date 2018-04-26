@@ -16,6 +16,7 @@ class EmojiiDefinitionViewController: UIViewController {
     var emojii = Emojii( )
     override func viewDidLoad() {
         super.viewDidLoad()
+        //eliminated all of the if statements
        emojiiLabel.text =  emojii.theEmojii
         emojiiDefinition.text = emojii.def
         categoryLabel.text = emojii.category
