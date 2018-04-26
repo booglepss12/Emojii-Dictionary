@@ -9,9 +9,11 @@
 import UIKit
 
 class EmojiiTableViewController: UITableViewController {
-    var emojiis = [ " 😀", "❤️", "🐶","🌈","🍎" ]
+    var emojiis : [ Emojii]  = [ ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        emojiis = createEmojiis()
 
       }
 
@@ -24,8 +26,9 @@ class EmojiiTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
 
-       cell.textLabel?.text = emojiis[indexPath.row]
-        
+       cell.textLabel?.text = emojiis[indexPath.row].theEmojii
+        let emojii = emojiis[indexPath.row]
+        cell.textLabel?.text = "\(emojii.theEmojii) - \(emojii.category)"
 
         return cell
     }
@@ -35,9 +38,24 @@ class EmojiiTableViewController: UITableViewController {
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        var emojiiVC = segue.destination as! EmojiiDefinitionViewController
-        emojiiVC.emojii = sender as! String
+        let emojiiVC = segue.destination as! EmojiiDefinitionViewController
+        emojiiVC.emojii = sender as! Emojii
        
         
+    }
+    func createEmojiis() -> [Emojii]{
+        let smiley = Emojii ()
+        smiley.theEmojii =  "😀"
+        smiley.birthYear = 2010
+        smiley.def = "A smiley face"
+        smiley.category = "Faces"
+        let heart = Emojii()
+        heart.theEmojii = "❤️"
+        heart.birthYear = 2011
+        heart.category = "Expressions"
+        heart.def = "A heart"
+        
+        
+        return [smiley, heart]
     }
 }
